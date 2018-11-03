@@ -587,15 +587,14 @@ func (p *Project) run(path string, stream chan Response, stop <-chan bool) (err 
 		args = append(args, a...)
 	}
 	dirPath := os.Getenv("GOBIN")
-	if p.Tools.Run.Dir != "" {
-		dirPath, _ = filepath.Abs(p.Tools.Run.Dir)
+
+	listCmd := exec.Command("go", "list")
+	listCmdOutput, err := listCmd.Output()
+	if err != nil {
+		return err
 	}
-	name := filepath.Base(path)
-	if path == "." && p.Tools.Run.Dir == "" {
-		name = filepath.Base(Wdir())
-	} else if p.Tools.Run.Dir != "" {
-		name = filepath.Base(dirPath)
-	}
+
+	name := filepath.Base(strings.TrimSpace(string(listCmdOutput)))
 	path = filepath.Join(dirPath, name)
 	if p.Tools.Run.Method != "" {
 		path = p.Tools.Run.Method
