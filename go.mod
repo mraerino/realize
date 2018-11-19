@@ -1,4 +1,4 @@
-module github.com/mraerino/realize
+module github.com/oxequa/realize
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -12,7 +12,6 @@ require (
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/onsi/gomega v1.4.2 // indirect
 	github.com/oxequa/interact v0.0.0-20171114182912-f8fb5795b5d7
-	github.com/oxequa/realize v2.0.2+incompatible
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/sirupsen/logrus v1.0.6

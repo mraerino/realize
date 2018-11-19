@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mraerino/realize/realize"
+	"github.com/oxequa/realize/realize"
 )
 
 var mockResponse interface{}
